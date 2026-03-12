@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "fast_zero", from = "src"}]
+packages = [{include = "fast_zero"}]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
