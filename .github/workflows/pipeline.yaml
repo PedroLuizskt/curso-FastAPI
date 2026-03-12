@@ -20,3 +20,6 @@ jobs:
     -   name: Instalar dependÊncias
         run: poetry install
 
+    -   name: Executar testes
+        run: poetry run task test
+
