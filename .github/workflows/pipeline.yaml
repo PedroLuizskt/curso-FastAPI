@@ -7,19 +7,20 @@ jobs:
 
     steps:
     -   name: Copia os arquivos do repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Use a v4, é mais atual que a v3
 
     -   name: Instalar o Python
         uses: actions/setup-python@v5
         with: 
           python-version: '3.12'
     
-    -   name: Instalar 
+    -   name: Instalar o Poetry
         run: pipx install poetry
     
-    -   name: Instalar dependÊncias
-        run: poetry install
+    -   name: Instalar dependências
+        # Adicionamos o --no-root aqui para evitar o erro de pasta
+        run: poetry install --no-root
 
     -   name: Executar testes
+        # Se o comando 'task test' falhar, use: poetry run pytest
         run: poetry run task test
-
